@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaraki</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div class="container">
+        <button type="button" class="btn btn-danger audioButton" onclick="playAudio()">Play Sound</button>
+    </div>
+
+    <div class="mainContainer">
+        <div class="secondContainer">
+
+            <!-- Player Health bar-->
+            <div style="position: relative; ;
+            width: 100%; display: flex; justify-content: flex-end;  border-top: 3px solid #F9F7F7;
+            border-left: 3px solid #F9F7F7;
+            border-bottom: 3px solid #F9F7F7;">
+                <div class="Health"></div>
+                <div id="playerHealth" class="decrease2"></div>
+            </div>
+            <!-- Time Box -->
+            <div id="timers" class="timer">
+                60
+            </div>
+            <!-- Enemy Health bar -->
+            <div style="position: relative; ;
+            width: 100%;  border-top: 3px solid #F9F7F7;
+            border-right: 3px solid #F9F7F7;
+            border-bottom: 3px solid #F9F7F7;">
+                <div class="Health"></div>
+                <div id="enemyHealth" class="decrease1"> </div>
+            </div>
+
+
+        </div>
+        <div id="bankai" class="banner"></div>
+        <canvas>
+        </canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+        integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src=".\js\utils.js"></script>
+    <script src=".\js\classes.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

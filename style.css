@@ -1,0 +1,78 @@
+.Health {
+    background-color: #E23E57;
+    height: 30px;
+    width: 100%;
+
+}
+
+.mainContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.secondContainer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+
+.timer {
+    background-color: #DBE2EF;
+    width: 100px;
+    height: 55px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #769FCD;
+    font-family: 'Righteous', cursive;
+}
+
+.decrease1 {
+    position: absolute;
+    background: #3F72AF;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.decrease2 {
+    position: absolute;
+    background: #3F72AF;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.banner{
+    position: absolute;
+    color: #FFD460;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: 'Righteous', cursive;
+    font-size: 100px;
+}
+
+.audioButton{
+    position: absolute;
+    margin-left: 1025px;
+    margin-top: 20px;
+}
+
+
+.title{
+    position: fixed;
+    margin-top: 10px;
+    text-align: end;
+}
+
+
