@@ -222,7 +222,7 @@ const animate = () => {
     c.fillRect(0, 0, canvas.width, canvas.height);
     background.update()
     shop.update();
-    // c.fillStyle = 'rgba(33,25,255,0.15)'
+    // c.fillStyle = 'rgba(33,25,225,0.15)'
     // c.fillRect(0,0, canvas.width, canvas.height)
     player.update();
     enemy.update();
