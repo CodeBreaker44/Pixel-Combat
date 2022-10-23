@@ -20,7 +20,7 @@ const background = new Sprite({
     },
     imageSrc: '.\\images\\Background\\Final copy.png'
 })
-
+//test
 const shop = new Sprite({
     position: {
         x: 700,
