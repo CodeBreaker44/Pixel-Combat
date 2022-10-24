@@ -7,10 +7,10 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
 
-function playAudio (){
-var audio = new Audio('.\\audio\\backgroundMusic.mp3');
-audio.volume = 0.2;
-audio.play();
+function playAudio() {
+    var audio = new Audio('.\\audio\\backgroundMusic.mp3');
+    audio.volume = 0.2;
+    audio.play();
 }
 
 const background = new Sprite({
@@ -33,13 +33,13 @@ const shop = new Sprite({
 
 
 const NPC = new Sprite({
-    position:{
-        x:430,
-        y:200,
+    position: {
+        x: 430,
+        y: 200,
     },
     imageSrc: '.\\images\\mage_guardian_free_creativekind\\mage_guardian-magenta.png',
-    scale:2.5,
-    frameMax:14,
+    scale: 2.5,
+    frameMax: 14,
 })
 
 
@@ -296,8 +296,8 @@ const animate = () => {
         player.isAttacking = false;
         // document.getElementById("enemyHealth").style.width = enemy.health + '%';
 
-        gsap.to('#enemyHealth',{
-            width:enemy.health + '%'
+        gsap.to('#enemyHealth', {
+            width: enemy.health + '%'
         })
 
 
@@ -316,8 +316,8 @@ const animate = () => {
         enemy.isAttacking = false;
         // document.getElementById("playerHealth").style.width = player.health + '%';
 
-        gsap.to('#playerHealth',{
-            width:player.health + '%'
+        gsap.to('#playerHealth', {
+            width: player.health + '%'
         })
 
 
