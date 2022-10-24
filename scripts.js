@@ -32,6 +32,17 @@ const shop = new Sprite({
 })
 
 
+const NPC = new Sprite({
+    position:{
+        x:430,
+        y:200,
+    },
+    imageSrc: '.\\images\\mage_guardian_free_creativekind\\mage_guardian-magenta.png',
+    scale:2.5,
+    frameMax:14,
+})
+
+
 const player = new Zaraki({
     position: {
         x: 100,
@@ -222,6 +233,7 @@ const animate = () => {
     c.fillRect(0, 0, canvas.width, canvas.height);
     background.update()
     shop.update();
+    NPC.update();
     // c.fillStyle = 'rgba(33,25,225,0.15)'
     // c.fillRect(0,0, canvas.width, canvas.height)
     player.update();
