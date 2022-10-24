@@ -150,7 +150,7 @@ class Zaraki extends Sprite {
     }
 
     takeHit() {
-        this.health -= 5
+        this.health -= 20
 
         if (this.health <= 0) {
             this.switchSprite('death')
