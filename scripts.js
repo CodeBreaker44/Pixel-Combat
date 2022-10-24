@@ -8,7 +8,7 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.7;
 
 function playAudio (){
-var audio = new Audio('.\\audio\\1. God of War _ God of War OST.mp3');
+var audio = new Audio('.\\audio\\backgroundMusic.mp3');
 audio.volume = 0.2;
 audio.play();
 }
