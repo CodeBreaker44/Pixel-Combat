@@ -126,7 +126,7 @@ class Zaraki extends Sprite {
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y;
 
-      
+
 
         if (this.position.y + this.height + this.velocity.y >= canvas.height - 84) {
             this.velocity.y = 0;
@@ -150,7 +150,7 @@ class Zaraki extends Sprite {
     }
 
     takeHit() {
-        this.health -= 20
+        this.health -= 15;
 
         if (this.health <= 0) {
             this.switchSprite('death')
