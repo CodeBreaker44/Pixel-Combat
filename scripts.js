@@ -35,11 +35,22 @@ const shop = new Sprite({
 const NPC = new Sprite({
     position: {
         x: 430,
-        y: 200,
+        y: 130,
     },
     imageSrc: '.\\images\\mage_guardian_free_creativekind\\mage_guardian-magenta.png',
     scale: 2.5,
     frameMax: 14,
+})
+
+
+const backgroundAssest = new Sprite({
+    position: {
+        x: -35,
+        y: 190,
+    },
+    imageSrc: '.\\images\\Background\\FlyingObelisk_Simple\\FlyingObelisk_no_lightnings_no_letter.png',
+    scale: 0.8,
+    frameMax: 13,
 })
 
 
@@ -232,8 +243,10 @@ const animate = () => {
     c.fillStyle = 'black';
     c.fillRect(0, 0, canvas.width, canvas.height);
     background.update()
+    backgroundAssest.update();
     shop.update();
     NPC.update();
+   
     // c.fillStyle = 'rgba(33,25,225,0.15)'
     // c.fillRect(0,0, canvas.width, canvas.height)
     player.update();
