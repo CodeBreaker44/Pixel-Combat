@@ -75,4 +75,10 @@
     text-align: end;
 }
 
+.replayButton{
+    position: absolute;
+    margin-left: 1025px;
+    margin-top: 60px;
+}
+
 

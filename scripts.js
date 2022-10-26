@@ -7,10 +7,14 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
 
-function playAudio() {
+const playAudio = () => {
     var audio = new Audio('.\\audio\\backgroundMusic.mp3');
-    audio.volume = 0.2;
+    audio.volume = 0.3;
     audio.play();
+}
+
+const playAgain = () => {
+    window.location.reload();
 }
 
 const background = new Sprite({
@@ -20,7 +24,8 @@ const background = new Sprite({
     },
     imageSrc: '.\\images\\Background\\Final copy.png'
 })
-//test
+
+
 const shop = new Sprite({
     position: {
         x: 700,
@@ -246,7 +251,7 @@ const animate = () => {
     backgroundAssest.update();
     shop.update();
     NPC.update();
-   
+
     // c.fillStyle = 'rgba(33,25,225,0.15)'
     // c.fillRect(0,0, canvas.width, canvas.height)
     player.update();
