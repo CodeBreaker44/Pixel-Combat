@@ -18,7 +18,7 @@ const winnerDec = ({
     clearTimeout(timerID)
     document.getElementById("bankai").style.display = 'flex';
     if (player.health == enemy.health) {
-        document.getElementById("bankai").innerHTML = 'Bankai';
+        document.getElementById("bankai").innerHTML = 'Tie';
     }
     if (player.health > enemy.health) {
         document.getElementById("bankai").innerHTML = 'Gandalf Wins';
