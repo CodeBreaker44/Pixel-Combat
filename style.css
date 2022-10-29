@@ -48,7 +48,7 @@
     width: 100%;
 }
 
-.banner{
+.banner {
     position: absolute;
     color: #FFD460;
     display: none;
@@ -62,23 +62,33 @@
     font-size: 100px;
 }
 
-.audioButton{
+.audioButton {
     position: absolute;
     margin-left: 1025px;
     margin-top: 20px;
 }
 
 
-.title{
+.title {
     position: fixed;
     margin-top: 10px;
     text-align: end;
 }
 
-.replayButton{
+.replayButton {
     position: absolute;
     margin-left: 1025px;
     margin-top: 80px;
 }
 
+.player1Controls {
+    position: absolute;
+    margin-left: 1020px;
+    margin-top: 200px;
+}
 
+.Player2Controls{
+    position: absolute;
+    margin-left: 1030px;
+    margin-top: 400px;
+}
