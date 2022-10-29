@@ -345,7 +345,7 @@ const animate = () => {
     }
 
     //Game Over:
-    if (enemy.health <= 0 || player.health <= 0) {
+    if (enemy.health <= 0 || player.health <= 0 ) {
         winnerDec({
             player,
             enemy,
@@ -360,7 +360,7 @@ animate();
 
 
 window.addEventListener('keydown', (event) => {
-    console.log(event.key)
+    // console.log(event.key)
     //Player Keys
     if (!player.dead) {
         switch (event.key) {
@@ -413,7 +413,7 @@ window.addEventListener('keydown', (event) => {
         }
     }
 
-    console.log(event.key);
+    // console.log(event.key);
 })
 
 window.addEventListener('keyup', (event) => {
@@ -442,5 +442,5 @@ window.addEventListener('keyup', (event) => {
             keys.ArrowUp.pressed = false;
             break
     }
-    console.log(event.key);
+    // console.log(event.key);
 })
