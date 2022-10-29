@@ -444,3 +444,10 @@ window.addEventListener('keyup', (event) => {
     }
     // console.log(event.key);
 })
+
+// To prevent browser from auto scrolling
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
