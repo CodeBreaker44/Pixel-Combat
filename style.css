@@ -1,21 +1,37 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* This prevents scrolling */
+}
+
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
 .Health {
     background-color: #E23E57;
-    height: 30px;
+    height: 55px;
     width: 100%;
 
 }
 
 .mainContainer {
-    position: relative;
-    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .secondContainer {
     position: absolute;
-    display: flex;
+    top: 0;
     width: 100%;
-    align-items: center;
-    padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .timer {
@@ -91,4 +107,29 @@
     position: absolute;
     margin-left: 1030px;
     margin-top: 400px;
+}
+
+side-menu {
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-menu .menu-content {
+    padding: 8px;
+    text-align: left;
+}
+
+.side-menu button {
+    padding: 8px;
+    text-align: center;
+    display: block;
+    transition: 0.3s;
 }

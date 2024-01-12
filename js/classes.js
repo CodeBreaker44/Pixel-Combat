@@ -84,6 +84,7 @@ class Zaraki extends Sprite {
             frameMax,
             offset
         });
+        this.onGround = true;
         this.velocity = velocity;
         this.height = 150;
         this.width = 50;
@@ -128,11 +129,13 @@ class Zaraki extends Sprite {
 
 
 
-        if (this.position.y + this.height + this.velocity.y >= canvas.height - 84) {
+        if (this.position.y + this.height >= canvas.height - 84) { // Assuming 84 is ground level
             this.velocity.y = 0;
-            this.position.y = 342;
+            this.position.y = canvas.height - this.height - 84; // Adjust position to be on ground
+            this.onGround = true;
         } else {
             this.velocity.y += gravity;
+            this.onGround = false;
         }
     }
 

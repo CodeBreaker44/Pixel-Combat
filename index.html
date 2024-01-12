@@ -22,12 +22,7 @@
 
 <body>
 
-    <div class="container">
-        <button type="button" class="btn btn-danger audioButton" onclick="playAudio()">Play Sound</button>
-        <button type="button" class="btn btn-primary replayButton" onclick="playAgain()">Play Again</button>
-    </div>
-
-    <div >
+    <div style="background-color: #fff; display: none;" id="Instructions">
         <img src=".\\images\\Instructions\\Player1 controls1.png" alt="Player1 Controls" class="player1Controls">
         <img src=".\\images\\Instructions\\Player2 controls2.png" alt="Player2 Controls" class="Player2Controls">
     </div>
@@ -55,6 +50,20 @@
                 <div class="Health"></div>
                 <div id="enemyHealth" class="decrease1"> </div>
             </div>
+
+            <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button type="button" class="btn" style="color: #3F72AF ;" onclick="playAudio()">Play Sound</button></li>
+                  <li><button type="button" class="btn " onclick="playAgain()">Play Again</button></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><button type="button" class="btn" onclick="hideInstructions()">Show Instructions </button></li>
+                </ul>
+                
+              </div>
+            
 
 
         </div>

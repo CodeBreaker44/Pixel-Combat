@@ -6,6 +6,7 @@ canvas.height = 576;
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
+var paused = false
 
 const playAudio = () => {
     var audio = new Audio('.\\audio\\backgroundMusic.mp3');
@@ -15,6 +16,20 @@ const playAudio = () => {
 
 const playAgain = () => {
     window.location.reload();
+}
+
+const hideInstructions = () =>{
+    var x = document.getElementById("Instructions")
+    if (x.style.display !== "none") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    console.log("loki")
+}
+
+const pause = () => {
+ alert('Game Paused')
 }
 
 const background = new Sprite({
@@ -120,6 +135,7 @@ const player = new Zaraki({
             frameMax: 7
         },
     },
+    onGround: true,
     attackBox: {
         offset: {
             x: -100,
@@ -140,6 +156,7 @@ const enemy = new Zaraki({
         x: 0,
         y: 0
     },
+    onGround: true,
     color: 'blue',
     offset: {
         x: 50,
@@ -194,6 +211,7 @@ const enemy = new Zaraki({
             frameMax: 7
         },
     },
+    
     attackBox: {
         offset: {
             x: 150,
@@ -237,6 +255,9 @@ const keys = {
     ArrowDown: {
         pressed: false
     },
+    p:{
+        pressed: false
+    }
 
 }
 
@@ -345,7 +366,7 @@ const animate = () => {
     }
 
     //Game Over:
-    if (enemy.health <= 0 || player.health <= 0 ) {
+    if (enemy.health <= 0 || player.health <= 0) {
         winnerDec({
             player,
             enemy,
@@ -373,15 +394,21 @@ window.addEventListener('keydown', (event) => {
                 player.lastKey = 'a';
                 break
             case 'w':
+                if (player.onGround && !keys.w.pressed) { // Check if on ground and W not already pressed
+                    player.velocity.y = -20; // Jump velocity
+                    player.onGround = false;
+                }
                 keys.w.pressed = true;
-                player.lastKey = 'w';
-                break
+                break;
             case ' ':
                 player.attack1();
                 break;
             case 'Shift':
                 player.attack2();
                 break;
+                case 'p':
+                    pause()
+                    player.lastKey = 'p'
         }
     }
 
@@ -397,9 +424,12 @@ window.addEventListener('keydown', (event) => {
                 enemy.lastKey = 'ArrowLeft';
                 break
             case 'ArrowUp':
+                if (enemy.onGround && !keys.ArrowUp.pressed) { // Check if on ground and W not already pressed
+                    enemy.velocity.y = -20; // Jump velocity
+                    enemy.onGround = false;
+                }
                 keys.ArrowUp.pressed = true;
-                enemy.lastKey = 'ArrowUp';
-                break
+                break;
             case 'ArrowDown':
                 enemy.attack1();
                 break;
@@ -446,8 +476,8 @@ window.addEventListener('keyup', (event) => {
 })
 
 // To prevent browser from auto scrolling
-window.addEventListener("keydown", function(e) {
-    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+window.addEventListener("keydown", function (e) {
+    if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
         e.preventDefault();
     }
 }, false);
