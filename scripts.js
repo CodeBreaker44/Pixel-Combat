@@ -8,11 +8,17 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.7;
 var paused = false
 
-const playAudio = () => {
-    var audio = new Audio('.\\audio\\backgroundMusic.mp3');
-    audio.volume = 0.3;
-    audio.play();
+let audioPlayed = false; 
+let audio = new Audio('.\\audio\\backgroundMusic.mp3');
+audio.volume = 0.3;
+
+function playAudio() {
+    if (!audioPlayed) { 
+        audio.play();
+        audioPlayed = true; 
+    }
 }
+
 
 const playAgain = () => {
     window.location.reload();
@@ -386,6 +392,7 @@ window.addEventListener('keydown', (event) => {
     if (!player.dead) {
         switch (event.key) {
             case 'd':
+                playAudio();
                 keys.d.pressed = true;
                 player.lastKey = 'd';
                 break
