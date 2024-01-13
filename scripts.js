@@ -8,14 +8,14 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.7;
 var paused = false
 
-let audioPlayed = false; 
+let audioPlayed = false;
 let audio = new Audio('.\\audio\\backgroundMusic.mp3');
 audio.volume = 0.3;
 
 function playAudio() {
-    if (!audioPlayed) { 
+    if (!audioPlayed) {
         audio.play();
-        audioPlayed = true; 
+        audioPlayed = true;
     }
 }
 
@@ -24,18 +24,18 @@ const playAgain = () => {
     window.location.reload();
 }
 
-const hideInstructions = () =>{
+const hideInstructions = () => {
     var x = document.getElementById("Instructions")
     if (x.style.display !== "none") {
         x.style.display = "none";
-      } else {
+    } else {
         x.style.display = "block";
-      }
+    }
     console.log("loki")
 }
 
 const pause = () => {
- alert('Game Paused')
+    alert('Game Paused')
 }
 
 const background = new Sprite({
@@ -208,6 +208,10 @@ const enemy = new Zaraki({
             imageSrc: '.\\images\\Fantasy Warrior\\Sprites\\Attack3.png',
             frameMax: 8,
         },
+        attack4: {
+            imageSrc: '.\\images\\Fantasy Warrior\\Sprites\\test.png',
+            frameMax: 18,
+        },
         hit: {
             imageSrc: '.\\images\\Fantasy Warrior\\Sprites\\Take hit.png',
             frameMax: 3,
@@ -261,9 +265,12 @@ const keys = {
     ArrowDown: {
         pressed: false
     },
-    p:{
+    p: {
         pressed: false
-    }
+    },
+    u: {
+        pressed: false
+    },
 
 }
 
@@ -413,9 +420,9 @@ window.addEventListener('keydown', (event) => {
             case 'Shift':
                 player.attack2();
                 break;
-                case 'p':
-                    pause()
-                    player.lastKey = 'p'
+            case 'p':
+                pause()
+                player.lastKey = 'p'
         }
     }
 
@@ -427,6 +434,7 @@ window.addEventListener('keydown', (event) => {
                 enemy.lastKey = 'ArrowRight';
                 break
             case 'ArrowLeft':
+                playAudio();
                 keys.ArrowLeft.pressed = true;
                 enemy.lastKey = 'ArrowLeft';
                 break
@@ -445,6 +453,9 @@ window.addEventListener('keydown', (event) => {
                 break;
             case 'm':
                 enemy.attack3();
+                break;
+            case 'u':
+                enemy.attack4();
                 break;
 
         }

@@ -129,7 +129,7 @@ class Zaraki extends Sprite {
 
 
 
-        if (this.position.y + this.height >= canvas.height - 84) { // Assuming 84 is ground level
+        if (this.position.y + this.height >= canvas.height - 84) {
             this.velocity.y = 0;
             this.position.y = canvas.height - this.height - 84; // Adjust position to be on ground
             this.onGround = true;
@@ -151,6 +151,10 @@ class Zaraki extends Sprite {
         this.switchSprite('attack3');
         this.isAttacking = true;
     }
+    attack4() {
+        this.switchSprite('attack4');
+        this.isAttacking = true;
+    }
 
     takeHit() {
         this.health -= 7;
@@ -168,6 +172,9 @@ class Zaraki extends Sprite {
             return
         }
 
+        // if (this.image == this.sprites.attack4.image &&
+        //     this.frameCurrent < this.sprites.attack4.frameMax - 1)
+        //     return
 
         if (this.image == this.sprites.attack1.image &&
             this.frameCurrent < this.sprites.attack1.frameMax - 1)
@@ -240,6 +247,14 @@ class Zaraki extends Sprite {
                 if (this.image != this.sprites.attack3.image) {
                     this.image = this.sprites.attack3.image;
                     this.frameMax = this.sprites.attack3.frameMax;
+                    this.frameCurrent = 0;
+                }
+                break;
+                
+            case 'attack4':
+                if (this.image != this.sprites.attack4.image) {
+                    this.image = this.sprites.attack4.image;
+                    this.frameMax = this.sprites.attack4.frameMax;
                     this.frameCurrent = 0;
                 }
                 break;
